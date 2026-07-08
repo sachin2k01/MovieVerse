@@ -8,3 +8,28 @@
   font-size: 26px;
   color: #ffe400;
 }
+
+.movie_filter {
+  list-style: none;
+  font-size: 16px;
+}
+.movie_filter_list {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.movie_filter_list.active {
+  border-bottom: 1px solid #e6e6e6;
+  font-weight: 500; 
+}
+.movie_sorting {
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: inherit;
+  height: 30px;
+  padding: 0px 5px;
+  margin: 0px 10px;
+}

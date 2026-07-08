@@ -1,6 +1,7 @@
 import React from "react";
 import "./MovieList.css";
 import Fire_Img from "../../assets/fire.png";
+import MovieCard from "../MovieCard/MovieCard";
 
 const MovieList = () => {
   return (
@@ -12,10 +13,10 @@ const MovieList = () => {
           <img src={Fire_Img} alt="fire emoji" className="navbar_emoji" />
         </h2>
         <div className="align_center movie_list_fs">
-          <ul className="movie_filter">
-            <li className="movie_filter_item">8+ Star</li>
-            <li className="movie_filter_item">7+ Star</li>
-            <li className="movie_filter_item">6+ Star</li>
+          <ul className="align_center movie_filter">
+            <li className="movie_filter_list active">8+ Star</li>
+            <li className="movie_filter_list">7+ Star</li>
+            <li className="movie_filter_list">6+ Star</li>
           </ul>
 
           <select name=" " id=" " className="movie_sorting">
@@ -30,6 +31,9 @@ const MovieList = () => {
         </div>
       </header>
       {/*Movie Card*/}
+      <div className="movie_cards">
+        <MovieCard />
+      </div>
     </section>
   );
 };
