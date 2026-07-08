@@ -1,13 +1,15 @@
-import React from 'react';
+import React from "react";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
+import MovieList from "./components/MovieList/MovieList";
 
 const App = () => {
-return (
+  return (
     <div className="App">
-      <Navbar/>
+      <Navbar />
+      <MovieList />
     </div>
   );
-}
+};
 
 export default App;

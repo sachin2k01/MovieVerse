@@ -1,22 +1,33 @@
 import React from "react";
 import "./Navbar.css";
-import Fire_Img from "../../assets/images/Fire.png";
-import Star_Img from "../../assets/images/glowing_star.png";
-import Party_Img from "../../assets/images/party_face.png";
+import Fire_Img from "../../assets/fire.png";
+import Star_Img from "../../assets/glowing-star.png";
+import Party_Img from "../../assets/partying-face.png";
 
 const Navbar = () => {
   return (
     <nav className="navbar">
       <h1>MovieVerse</h1>
-      <div className="navbar-links">
+      <div className="navbar_links">
         <a href="/">
-          <img src={Fire_Img} alt="Fire" />
+          Popular
+          <img src={Fire_Img} alt="fire emoji" className="navbar_emoji" />
         </a>
         <a href="/about">
-          <img src={Star_Img} alt="Star" />
+          Top Rated
+          <img
+            src={Star_Img}
+            alt="glowing star emoji"
+            className="navbar_emoji"
+          />
         </a>
         <a href="/contact">
-          <img src={Party_Img} alt="Party" />
+          Upcoming
+          <img
+            src={Party_Img}
+            alt="party face emoji"
+            className="navbar_emoji"
+          />
         </a>
       </div>
     </nav>

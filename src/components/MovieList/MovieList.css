@@ -1,0 +1,10 @@
+.movie_list_header {
+  padding: 10px 30px;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.movie_list_heading {
+  font-size: 26px;
+  color: #ffe400;
+}
