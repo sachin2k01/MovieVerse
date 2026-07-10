@@ -1,9 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./MovieList.css";
 import Fire_Img from "../../assets/fire.png";
 import MovieCard from "../MovieCard/MovieCard";
+import { API_KEY } from "../../assets/ApiUtils";
 
 const MovieList = () => {
+  const [movies, setMovies] = useState([]);
+  useEffect(() => {
+    fetchMovies();
+  }, []);
+  console.log(API_KEY);
+  const fetchMovies = async () => {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`,
+    );
+    const data = await response.json();
+    setMovies(data.results);
+    console.log(data);
+  };
   return (
     <section className="movie_list">
       {/*Header */}
@@ -32,7 +46,9 @@ const MovieList = () => {
       </header>
       {/*Movie Card*/}
       <div className="movie_cards">
-        <MovieCard />
+        {movies.map((movie) => (
+          <MovieCard key={movie.id} movie={movie} />
+        ))}
       </div>
     </section>
   );

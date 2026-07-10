@@ -2,26 +2,25 @@ import React from "react";
 import "./MovieCard.css";
 import Star_Img from "../../assets/star.png";
 
-const MovieCard = () => {
+const MovieCard = ({ movie }) => {
   return (
     <a href="#" className="movie_card">
       <img
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSedK1S4T7FINgS5uMYlsXlRB9Q9C5gFFzxMJ-Y-3pXgg&s=10"
-        alt="Movie Poster"
+        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+        alt={movie.title}
         className="movie_poster"
       />
       <div className="movie_details">
-        <h3 className="movie_details_heading">Movie Title</h3>
+        <h3 className="movie_details_heading">{movie.title}</h3>
         <div className="align_center movie_date_rate">
-          <p>10-15-2023</p>
+          <p>{movie.release_date}</p>
           <p>
-            8.5
+            {Math.round(movie.vote_average * 10) / 10}
             <img src={Star_Img} alt="rating icon" className="card_emoji" />
           </p>
         </div>
         <p className="movie_description">
-          lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          {movie.overview.slice(0, 100) + "..."}
         </p>
       </div>
     </a>
