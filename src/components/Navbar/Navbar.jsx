@@ -3,17 +3,18 @@ import "./Navbar.css";
 import Fire_Img from "../../assets/fire.png";
 import Star_Img from "../../assets/glowing-star.png";
 import Party_Img from "../../assets/partying-face.png";
-
+import DarkMode from "../DarkMode/DarkMode";
 const Navbar = () => {
   return (
     <nav className="navbar">
       <h1>MovieVerse</h1>
       <div className="navbar_links">
-        <a href="/">
+        <DarkMode />
+        <a href="#popular">
           Popular
           <img src={Fire_Img} alt="fire emoji" className="navbar_emoji" />
         </a>
-        <a href="/about">
+        <a href="#top_rated">
           Top Rated
           <img
             src={Star_Img}
@@ -21,7 +22,7 @@ const Navbar = () => {
             className="navbar_emoji"
           />
         </a>
-        <a href="/contact">
+        <a href="#upcoming">
           Upcoming
           <img
             src={Party_Img}

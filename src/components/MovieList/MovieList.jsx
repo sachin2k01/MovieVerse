@@ -6,7 +6,7 @@ import { API_KEY } from "../../assets/ApiUtils";
 import FilterGroup from "./FilterGroup";
 import _ from "lodash";
 
-const MovieList = () => {
+const MovieList = ({ type, title, emoji }) => {
   const [movies, setMovies] = useState([]);
   const [minRating, setMinRating] = useState(0);
   const [filterMovies, setFilterMovies] = useState([]);
@@ -27,7 +27,7 @@ const MovieList = () => {
 
   const fetchMovies = async () => {
     const response = await fetch(
-      `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`,
+      `https://api.themoviedb.org/3/movie/${type}?api_key=${API_KEY}`,
     );
     const data = await response.json();
     setMovies(data.results);
@@ -55,12 +55,13 @@ const MovieList = () => {
   };
 
   return (
-    <section className="movie_list">
+    <section className="movie_list" id={type}>
       {/*Header */}
       <header className="align_center movie_list_header">
         <h2 className="align_center movie_list_heading">
-          Popular
-          <img src={Fire_Img} alt="fire emoji" className="navbar_emoji" />
+          {title}
+          {""}
+          <img src={emoji} alt={`${emoji} icon`} className="navbar_emoji" />
         </h2>
         <div className="align_center movie_list_fs">
           <FilterGroup
